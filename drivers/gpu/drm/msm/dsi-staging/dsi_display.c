@@ -2170,6 +2170,10 @@ end:
 	display->cmdline_timing = cmdline_timing;
 }
 
+#ifdef CONFIG_MACH_NUBIA_TP1803
+int nubia_panel_id = -1;
+#endif
+
 /**
  * dsi_display_parse_boot_display_selection()- Parse DSI boot display name
  *
@@ -2200,6 +2204,16 @@ static int dsi_display_parse_boot_display_selection(void)
 
 		boot_displays[i].boot_disp_en = true;
 	}
+
+#ifdef CONFIG_MACH_NUBIA_TP1803
+	if (!strcmp(boot_displays[0].name,"dsi_lead_hx83112a_1080_2160_5p65_video_display")){
+	nubia_panel_id = 1;
+	}
+	if (!strcmp(boot_displays[0].name,"dsi_jdi_hx83112a_1080_2160_5p65_video_display")){
+	nubia_panel_id = 0;
+	}
+	pr_err("[test] nubia_panel_id = %d\n",nubia_panel_id);
+#endif
 
 	return 0;
 }

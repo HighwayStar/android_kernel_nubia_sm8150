@@ -1,0 +1,37 @@
+#
+# Himax Touchscreen driver configuration
+#
+
+config TOUCHSCREEN_HIMAX_I2C_NUBIA
+	tristate "HIMAX chipset i2c touchscreen"
+		depends on NUBIA_TOUCHSCREEN_HXCHIPSET
+	help
+	  This enables support for HIMAX CHIPSET over I2C based touchscreens.
+
+# ***************** In-cell Start *****************
+config TOUCHSCREEN_HIMAX_INCELL_NUBIA
+	tristate "HIMAX chipset in-cell function"
+	depends on TOUCHSCREEN_HIMAX_I2C_NUBIA
+	help
+	  This enables support for HIMAX CHIPSET of in-cell function.
+
+config TOUCHSCREEN_HIMAX_IC_HX83112_NUBIA
+	tristate "HIMAX chipset HX83112 function"
+	depends on TOUCHSCREEN_HIMAX_INCELL_NUBIA
+	help
+	  This enables support for HIMAX CHIPSET of HX83112.
+
+# ***************** In-cell End *******************
+
+config TOUCHSCREEN_HIMAX_DEBUG_NUBIA
+	tristate "HIMAX debug function"
+	depends on TOUCHSCREEN_HIMAX_I2C_NUBIA
+	help
+	  This enables support for HIMAX debug function.
+
+
+config HMX_DB_NUBIA
+	tristate "HIMAX driver test over Dragon Board"
+	depends on TOUCHSCREEN_HIMAX_I2C_NUBIA
+	help
+	  This enables support for HIMAX driver test over Dragon Board.
