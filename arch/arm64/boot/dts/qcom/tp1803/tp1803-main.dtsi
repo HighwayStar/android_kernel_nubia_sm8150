@@ -1,0 +1,5 @@
+#include "sm8150.dtsi"
+#include "sm8150-pinctrl.dtsi"
+#include "sm8150-pcie.dtsi"
+#include "sm8150-audio.dtsi"
+#include "msm-audio-lpass.dtsi"

@@ -1,0 +1,27 @@
+&qupv3_se7_i2c {
+        status = "ok";
+         tfa98xx@34 {
+                status = "ok";
+                compatible = "nxp,tfa98xx";
+                reg =<0x34>;
+                reset-gpio = <&tlmm 100 0x00>;
+                irq-gpio = <&tlmm 96 0x00>;
+         };
+};
+
+&qupv3_se9_i2c {
+        nq@28 {
+                 pinctrl-0 = <&nfc_int_active &nfc_enable_active>;
+                 pinctrl-1 = <&nfc_int_suspend &nfc_enable_suspend>;
+        };
+};
+
+&pm8150l_wled {
+        qcom,string-cfg= <3>;
+};
+
+
+&sdhc_2 {
+        status = "disabled";
+};
+

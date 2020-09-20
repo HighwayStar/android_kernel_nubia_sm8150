@@ -1,0 +1,31 @@
+&sde_dsi {
+        //list could be minimized for faster boot
+        qcom,dsi-display-list =
+                <&dsi_sharp_4k_dsc_video_display
+                &dsi_sharp_4k_dsc_cmd_display
+                &dsi_sharp_1080_cmd_display
+                &dsi_dual_sharp_1080_120hz_cmd_display
+                &dsi_dual_nt35597_truly_video_display
+                &dsi_dual_nt35597_truly_cmd_display
+                &dsi_nt35597_truly_dsc_cmd_display
+                &dsi_nt35597_truly_dsc_video_display
+                &dsi_sim_vid_display
+                &dsi_dual_sim_vid_display
+                &dsi_sim_cmd_display
+                &dsi_dual_sim_cmd_display
+                &dsi_sim_dsc_375_cmd_display
+                &dsi_dual_sim_dsc_375_cmd_display
+                &dsi_sw43404_amoled_cmd_display
+                &dsi_nt35695b_truly_fhd_cmd_display
+                &dsi_nt35695b_truly_fhd_video_display
+                &dsi_sw43404_amoled_video_display
+                &dsi_sw43404_amoled_fhd_plus_cmd_display
+                &dsi_dual_nt36850_truly_cmd_display
+                &dsi_lead_hx83112a_1080_2160_5p65_video_display
+                &dsi_jdi_hx83112a_1080_2160_5p65_video_display>;
+};
+
+&mdss_mdp {
+        connectors = <&sde_rscc &sde_wb &sde_dp &sde_dsi>;
+};
+

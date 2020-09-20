@@ -1,0 +1,4 @@
+#include "sm8150-mtp.dtsi"
+#include "pm8150b.dtsi"
+#include "sm8150-sde-display.dtsi"
+#include "sm8150-audio-overlay.dtsi"

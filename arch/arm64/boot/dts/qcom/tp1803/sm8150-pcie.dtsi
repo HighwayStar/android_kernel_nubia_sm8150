@@ -1,0 +1,5 @@
+&pcie0 {
+        pinctrl-0;
+        /delete-property/ perst-gpio;
+        /delete-property/ wake-gpio;
+};
