@@ -1,0 +1,23 @@
+# Nubia configuration options
+
+config MACH_NUBIA
+    bool "NUBIA device"
+    help
+      Support for Nubia products
+
+config MACH_NUBIA_SM8150
+    bool "NUBIA SM8150"
+    depends on ARCH_SM8150
+    select MACH_NUBIA
+    help
+      Support for SM8150 Nubia variants
+
+menu "Nubia board selection"
+
+config MACH_NUBIA_TP1803
+    bool "NUBIA_TP1803 board"
+    select MACH_NUBIA_SM8150
+    help
+      Support for Nubia mini 5g (TP1803) variant
+
+endmenu
